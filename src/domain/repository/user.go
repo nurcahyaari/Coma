@@ -6,26 +6,26 @@ import (
 	"github.com/coma/coma/src/domain/entity"
 )
 
-//go:generate go run github.com/maxbrunsfeld/counterfeiter/v6 . RepositoryUserReader
+//counterfeiter:generate . RepositoryUserReader
 type RepositoryUserReader interface {
 	FindUser(ctx context.Context, filter entity.FilterUser) (entity.User, error)
 	FindUsers(ctx context.Context, filter entity.FilterUser) (entity.Users, error)
 }
 
-//go:generate go run github.com/maxbrunsfeld/counterfeiter/v6 . RepositoryUserWriter
+//counterfeiter:generate . RepositoryUserWriter
 type RepositoryUserWriter interface {
 	SaveUser(ctx context.Context, user entity.User) error
 	DeleteUser(ctx context.Context, filter entity.FilterUser) error
 	UpdateUser(ctx context.Context, user entity.User) error
 }
 
-//go:generate go run github.com/maxbrunsfeld/counterfeiter/v6 . RepositoryUserApplicationScopeReader
+//counterfeiter:generate . RepositoryUserApplicationScopeReader
 type RepositoryUserApplicationScopeReader interface {
 	FindUserApplicationScope(ctx context.Context, filter entity.FilterUserApplicationScope) (entity.UserApplicationScope, bool, error)
 	FindUserApplicationsScope(ctx context.Context, filter entity.FilterUserApplicationScope) (entity.UserApplicationsScope, error)
 }
 
-//go:generate go run github.com/maxbrunsfeld/counterfeiter/v6 . RepositoryUserApplicationScopeWriter
+//counterfeiter:generate . RepositoryUserApplicationScopeWriter
 type RepositoryUserApplicationScopeWriter interface {
 	SaveUserApplicationScope(ctx context.Context, userApplicationScope entity.UserApplicationScope) error
 	UpdateUserApplicationScope(ctx context.Context, userApplicationScope entity.UserApplicationScope) error

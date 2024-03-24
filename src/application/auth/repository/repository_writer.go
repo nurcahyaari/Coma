@@ -5,7 +5,6 @@ import (
 	"github.com/coma/coma/src/domain/repository"
 )
 
-//counterfeiter:generate . RepositoryWrite
 type RepositoryWrite struct {
 	dbName string
 	db     *database.Clover

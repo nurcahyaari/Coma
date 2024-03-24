@@ -15,7 +15,6 @@ type RepositoryUserRead struct {
 	db     *database.Clover
 }
 
-//counterfeiter:generate . RepositoryUserRead
 func NewRepositoryUserReader(db *database.Clover, name string) repository.RepositoryUserAuthReader {
 	db.DB.CreateCollection(name)
 	return &RepositoryUserRead{

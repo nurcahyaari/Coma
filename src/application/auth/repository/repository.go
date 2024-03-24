@@ -5,7 +5,6 @@ import (
 	"github.com/coma/coma/src/domain/repository"
 )
 
-//counterfeiter:generate . Repository
 type Repository struct {
 	db *database.Clover
 }

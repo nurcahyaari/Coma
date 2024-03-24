@@ -6,14 +6,14 @@ import (
 	"github.com/coma/coma/src/domain/entity"
 )
 
-//go:generate go run github.com/maxbrunsfeld/counterfeiter/v6 . RepositoryApplicationConfigurationWriter
+//counterfeiter:generate . RepositoryApplicationConfigurationWriter
 type RepositoryApplicationConfigurationWriter interface {
 	SetConfiguration(ctx context.Context, data entity.Configuration) (string, error)
 	DeleteConfiguration(ctx context.Context, filter entity.FilterConfiguration) error
 	UpdateConfiguration(ctx context.Context, data entity.Configuration) error
 }
 
-//go:generate go run github.com/maxbrunsfeld/counterfeiter/v6 . RepositoryApplicationConfigurationReader
+//counterfeiter:generate . RepositoryApplicationConfigurationReader
 type RepositoryApplicationConfigurationReader interface {
 	FindClientConfiguration(ctx context.Context, filter entity.FilterConfiguration) (entity.Configurations, error)
 }

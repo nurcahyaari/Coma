@@ -14,7 +14,6 @@ type RepositoryUserWrite struct {
 	db     *database.Clover
 }
 
-//counterfeiter:generate . RepositoryUserWrite
 func NewRepositoryUserWriter(db *database.Clover, name string) repository.RepositoryUserAuthWriter {
 	db.DB.CreateCollection(name)
 	return &RepositoryUserWrite{
